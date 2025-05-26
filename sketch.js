@@ -56,8 +56,8 @@ function draw() {
 
     noFill();
     stroke(255, 0, 0);
-    strokeWeight(4);
-    ellipse(x, y, 100, 100);
+    strokeWeight(2); // 減少線條粗細
+    ellipse(x, y, 50, 50); // 減少圓圈直徑
   }
 }
 
