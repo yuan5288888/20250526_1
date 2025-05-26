@@ -42,21 +42,22 @@ function draw() {
     let x, y;
     let color = [255, 0, 0]; // 預設為紅色 (鼻子)
 
-    if (gesture === "rock") {
+    if (handPredictions.length > 0 && gesture === "rock") {
       // 額頭 (第10點)
       [x, y] = keypoints[10];
       color = [255, 255, 0]; // 黃色
-    } else if (gesture === "scissors") {
+    } else if (handPredictions.length > 0 && gesture === "scissors") {
       // 左右眼睛 (第33點和第263點)
       [x, y] = keypoints[33];
       color = [0, 0, 255]; // 藍色
-    } else if (gesture === "paper") {
+    } else if (handPredictions.length > 0 && gesture === "paper") {
       // 左右臉頰 (第234點和第454點)
       [x, y] = keypoints[234];
       color = [255, 105, 180]; // 粉色
     } else {
       // 預設為鼻子 (第1點)
       [x, y] = keypoints[1];
+      color = [255, 0, 0]; // 紅色
     }
 
     noFill();
