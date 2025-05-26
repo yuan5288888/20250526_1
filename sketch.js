@@ -40,22 +40,27 @@ function draw() {
 
     // 根據手勢移動圓圈
     let x, y;
+    let color; // 用於設定圓圈顏色
     if (gesture === "rock") {
       // 額頭 (第10點)
       [x, y] = keypoints[10];
+      color = [255, 255, 0]; // 黃色
     } else if (gesture === "scissors") {
       // 左右眼睛 (第33點和第263點)
       [x, y] = keypoints[33];
+      color = [0, 0, 255]; // 藍色
     } else if (gesture === "paper") {
       // 左右臉頰 (第234點和第454點)
       [x, y] = keypoints[234];
+      color = [255, 105, 180]; // 粉色
     } else {
       // 預設為鼻子 (第1點)
       [x, y] = keypoints[1];
+      color = [255, 0, 0]; // 紅色
     }
 
     noFill();
-    stroke(255, 0, 0);
+    stroke(color[0], color[1], color[2]); // 設定圓圈顏色
     strokeWeight(2); // 減少線條粗細
     ellipse(x, y, 30, 30); // 縮小圓圈直徑
   }
