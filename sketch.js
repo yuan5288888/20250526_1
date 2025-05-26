@@ -50,14 +50,14 @@ function draw() {
       // 左右臉頰 (第234點和第454點)
       [x, y] = keypoints[234];
     } else {
-      // 預設為第94點
-      [x, y] = keypoints[94];
+      // 預設為鼻子 (第1點)
+      [x, y] = keypoints[1];
     }
 
     noFill();
     stroke(255, 0, 0);
     strokeWeight(2); // 減少線條粗細
-    ellipse(x, y, 50, 50); // 減少圓圈直徑
+    ellipse(x, y, 30, 30); // 縮小圓圈直徑
   }
 }
 
