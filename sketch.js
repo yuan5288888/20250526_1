@@ -40,7 +40,8 @@ function draw() {
 
     // 根據手勢移動圓圈
     let x, y;
-    let color; // 用於設定圓圈顏色
+    let color = [255, 0, 0]; // 預設為紅色 (鼻子)
+
     if (gesture === "rock") {
       // 額頭 (第10點)
       [x, y] = keypoints[10];
@@ -56,7 +57,6 @@ function draw() {
     } else {
       // 預設為鼻子 (第1點)
       [x, y] = keypoints[1];
-      color = [255, 0, 0]; // 紅色
     }
 
     noFill();
